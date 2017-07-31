@@ -7,58 +7,55 @@ $this->load->view('template/sidebar');
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        TRANSAKSI 
-        <small>Daftar Transaksi</small>
+        MEMBER
+        <small>Daftar Member</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
-        <li class="active">Transaksi</li>
+        <li class="active">Member</li>
     </ol>
   	<!-- Main content -->
     <section class="content">
           <div class="row">
             <div class="col-md-12">
+            <p>
+              <a class="btn btn-info" type="submit" href="<?php echo site_url('C_member/tambah') ?>">Tambah Member</a>
+            </p>
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Daftar Transaksi</h3>
+                  <h3 class="box-title">Daftar Member</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <table class="table table-bordered">
                     <tr>
                       <!-- <th style="width: 10px">ID</th> -->
                       <th>No</th>
-                      <th>Tanggal</th>
-                      <th>Member</th>
-                      <th>Kategori</th>
-                      <th>Type</th>
-                      <th>Jumlah</th>
-                      <th>Keterangan</th>
+                      <th>Nama</th>
+                      <th>Alamat</th>
+                      <th>No HP</th>
                       <th>Action</th>
                     </tr>
                     <?php  
-                  $id_transaksi=1;
-                  foreach ($financial as $transaksi) {
+                      $id_member=1;
+                      foreach ($financial as $member) {
                     echo "<tr>";
-                    echo '<td>'.$id_transaksi."</td>";
-                    echo '<td>'.$transaksi['tanggal']."</td>";
-                    echo '<td>'.$transaksi['nama']."</td>";
-                    echo '<td>'.$transaksi['nama_kategori']."</td>";
-                    echo '<td>'.$transaksi['tipe']."</td>";
-                    echo '<td>'.$transaksi['jml_transaksi']."</td>";
-                    echo '<td>'.$transaksi['keterangan']."</td>";
-                    echo "<td><a href='".base_url()."C_transaksi/edit/".$transaksi['id_transaksi']."' class='btn-group btn-warning btn-xs'><span class='glyphicon glyphicon-edit'></span>Edit <a href='".base_url()."C_transaksi/hapus/".$transaksi['id_transaksi']."' class='btn-group btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span> Del</a></td>";
+                    echo '<td>'.$id_member."</td>";
+                    echo '<td>'.$member['nama']."</td>";
+                    echo '<td>'.$member['alamat']."</td>";
+                    echo '<td>'.$member['no_hp']."</td>";
+                    echo "<td><a href='".base_url()."C_member/edit/".$member['id_member']."' class='btn btn-warning btn-xs'><span class='glyphicon glyphicon-edit'></span>Edit <a href='".base_url()."C_member/hapus/".$member['id_member']."' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span> Del</a></td>";
                     echo "</tr>";
 
-                    $id_transaksi++;
+                    $id_member++;
 
-                  }
-                  ?>
+                    }
+                    ?>
                   </table>
               	</div><!-- /.box -->
-              </div>
-            </div>
-          </div>
-        </section>
+    			    </div>
+    	      </div>
+    	    </div>
+    </section>
 
 <?php
 $this->load->view('template/js');
