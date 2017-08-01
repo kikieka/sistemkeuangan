@@ -15,6 +15,12 @@ $this->load->view('template/sidebar');
         <li class="active">Kategori</li>
     </ol>
   	<!-- Main content -->
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#example1').DataTable();
+         
+      });
+    </script>
     <section class="content">
           <div class="row">
             <div class="col-md-12">
@@ -26,33 +32,36 @@ $this->load->view('template/sidebar');
                   <h3 class="box-title">Daftar Kategori</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                  <table class="table table-bordered">
-                    <tr>
-                      <!-- <th style="width: 10px">ID kategori</th> -->
-                      <th>No</th>
-                      <th>Nama Kategori</th>
-                      <th>Action</th>
-                    </tr>
+                  <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Nama Kategori</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                      <tbody>
                         <?php  
                           $id_kategori=1;
                           foreach ($financial as $kategori) {
-                    echo "<tr>";
-                    echo '<td>'.$id_kategori."</td>";
-                    echo '<td>'.$kategori['nama_kategori']."</td>";
-                    echo "<td><a href='".base_url()."C_kategori/edit/".$kategori['id_kategori']."' class='btn btn-warning btn-xs'><span class='glyphicon glyphicon-edit'></span>Edit <a href='".base_url()."C_kategori/hapus/".$kategori['id_kategori']."' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span> Del</a></td>";
-                    echo "</tr>";
+                          echo "<tr>";
+                          echo '<td>'.$id_kategori."</td>";
+                          echo '<td>'.$kategori['nama_kategori']."</td>";
+                          echo "<td><a href='".base_url()."C_kategori/edit/".$kategori['id_kategori']."' class='btn btn-warning btn-xs'><span class='glyphicon glyphicon-edit'></span>Edit <a href='".base_url()."C_kategori/hapus/".$kategori['id_kategori']."' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span> Del</a></td>";
+                          echo "</tr>";
 
-                    $id_kategori++;
+                          $id_kategori++;
 
                         }
                         ?>
+                      </tbody>
                   </table>
-              	</div><!-- /.box -->
-    			</div>
+              	</div>
+    			   </div>
     		  </div>
     		</div>
     </section>
-</section>
+  </section>
 
 <?php
 $this->load->view('template/js');
@@ -79,6 +88,9 @@ $this->load->view('template/js');
 <script src="<?php echo base_url('assets/AdminLTE-2.0.5/plugins/daterangepicker/daterangepicker.js') ?>" type="text/javascript"></script>
 <!-- datepicker -->
 <script src="<?php echo base_url('assets/AdminLTE-2.0.5/plugins/datepicker/bootstrap-datepicker.js') ?>" type="text/javascript"></script>
+<!-- Data Tables-->
+<script src="<?php echo base_url('assets/AdminLTE-2.0.5/plugins/datatables/jquery.dataTables.min.js')?>" type="text/javascript"></script>
+<script src="<?php echo base_url('assets/AdminLTE-2.0.5/plugins/datatables/dataTables.bootstrap.min.js')?>" type="text/javascript"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="<?php echo base_url('assets/AdminLTE-2.0.5/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') ?>" type="text/javascript"></script>
 <!-- iCheck -->

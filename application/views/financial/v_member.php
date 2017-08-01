@@ -15,6 +15,12 @@ $this->load->view('template/sidebar');
         <li class="active">Member</li>
     </ol>
   	<!-- Main content -->
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#example1').DataTable();
+         
+      });
+    </script>
     <section class="content">
           <div class="row">
             <div class="col-md-12">
@@ -25,16 +31,20 @@ $this->load->view('template/sidebar');
                 <div class="box-header">
                   <h3 class="box-title">Daftar Member</h3>
                 </div><!-- /.box-header -->
+                <!-- /.box-header -->
                 <div class="box-body">
-                  <table class="table table-bordered">
-                    <tr>
-                      <!-- <th style="width: 10px">ID</th> -->
-                      <th>No</th>
-                      <th>Nama</th>
-                      <th>Alamat</th>
-                      <th>No HP</th>
-                      <th>Action</th>
-                    </tr>
+                <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <!-- <th style="width: 10px">ID</th> -->
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Alamat</th>
+                    <th>No HP</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                  <tbody>
                     <?php  
                       $id_member=1;
                       foreach ($financial as $member) {
@@ -50,12 +60,14 @@ $this->load->view('template/sidebar');
 
                     }
                     ?>
-                  </table>
-              	</div><!-- /.box -->
+                  </tbody>
+                </table>
+              	</div>
     			    </div>
     	      </div>
     	    </div>
     </section>
+  </section>
 
 <?php
 $this->load->view('template/js');
@@ -82,6 +94,9 @@ $this->load->view('template/js');
 <script src="<?php echo base_url('assets/AdminLTE-2.0.5/plugins/daterangepicker/daterangepicker.js') ?>" type="text/javascript"></script>
 <!-- datepicker -->
 <script src="<?php echo base_url('assets/AdminLTE-2.0.5/plugins/datepicker/bootstrap-datepicker.js') ?>" type="text/javascript"></script>
+<!-- Data Tables-->
+<script src="<?php echo base_url('assets/AdminLTE-2.0.5/plugins/datatables/jquery.dataTables.min.js')?>" type="text/javascript"></script>
+<script src="<?php echo base_url('assets/AdminLTE-2.0.5/plugins/datatables/dataTables.bootstrap.min.js')?>" type="text/javascript"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="<?php echo base_url('assets/AdminLTE-2.0.5/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') ?>" type="text/javascript"></script>
 <!-- iCheck -->

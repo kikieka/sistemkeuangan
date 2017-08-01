@@ -11,9 +11,15 @@ $this->load->view('template/sidebar');
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
-        <li class="active">Transaksi</li>
+        <li class="active">User</li>
     </ol>
   	<!-- Main content -->
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#example1').DataTable();
+         
+      });
+    </script>
     <section class="content">
           <div class="row">
             <div class="col-md-12">
@@ -25,38 +31,37 @@ $this->load->view('template/sidebar');
                   <h3 class="box-title">Data User</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                  <table class="table table-bordered">
+                  <table id="example1" class="table table-bordered table-striped">
+                    <thead>
                     <tr>
                       <th>No</th>
                       <th>Username</th>
                       <th>Role</th>
-                      <th colspan="2">Action</th>
+                      <th>Action</th>
                     </tr>
-                    <?php  
-                  $id_user=1;
-                  foreach ($financial as $user) {
-                    echo "<tr>";
-                    echo '<td>'.$id_user."</td>";
-                    echo '<td>'.$user['username']."</td>";
-                    echo '<td>'.$user['role']."</td>";
-                    echo "<td><a href ='".base_url()."C_user/edit/".$user['id_user'],"'class='btn-group btn-warning btn-xs'><span class='glyphicon glyphicon-edit'></span>Edit <a href='".base_url()."C_user/delete/". $user['id_user']."' class='btn-group btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span> Del</a></td>";                  
-                    $id_user ++;  
-                    /**echo '<td>'.$user['action']."</td>";*/
-                    //echo '<td>'.anchor('buku/edit/'.$buku['idNovel'],'Edit')."</td>";
-                    //echo '<td><a data-toggle="modal" id="test" data-target="#m_delete" data-href="'.base_url()."buku/hapus/".$buku['idNovel'].'"> Hapus</td>';
-                    //echo '<td>'.anchor('buku/hapus/'.$buku['idNovel'],'Hapus')."</td>";
-                    echo "</tr>";
+                    </thead>
+                      <tbody>
+                        <?php  
+                        $id_user=1;
+                        foreach ($financial as $user) {
+                        echo "<tr>";
+                        echo '<td>'.$id_user."</td>";
+                        echo '<td>'.$user['username']."</td>";
+                        echo '<td>'.$user['role']."</td>";
+                        echo "<td><a href ='".base_url()."C_user/edit/".$user['id_user'],"'class='btn-group btn-warning btn-xs'><span class='glyphicon glyphicon-edit'></span>Edit <a href='".base_url()."C_user/delete/". $user['id_user']."' class='btn-group btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span> Del</a></td>";                  
+                        $id_user ++;  
+                        echo "</tr>";
 
-                  }
-                  ?>
+                      }
+                      ?>
+                    </tbody>
                   </table>
-              	</div><!-- /.box -->
-    			</div>
-    		  </div>
+              	</div>
+              </div>
+    		    </div>
     		</div>
     </section>
-</section>
-
+  </section>
 <?php
 $this->load->view('template/js');
 ?>
@@ -82,6 +87,9 @@ $this->load->view('template/js');
 <script src="<?php echo base_url('assets/AdminLTE-2.0.5/plugins/daterangepicker/daterangepicker.js') ?>" type="text/javascript"></script>
 <!-- datepicker -->
 <script src="<?php echo base_url('assets/AdminLTE-2.0.5/plugins/datepicker/bootstrap-datepicker.js') ?>" type="text/javascript"></script>
+<!-- Data Tables-->
+<script src="<?php echo base_url('assets/AdminLTE-2.0.5/plugins/datatables/jquery.dataTables.min.js')?>" type="text/javascript"></script>
+<script src="<?php echo base_url('assets/AdminLTE-2.0.5/plugins/datatables/dataTables.bootstrap.min.js')?>" type="text/javascript"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="<?php echo base_url('assets/AdminLTE-2.0.5/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') ?>" type="text/javascript"></script>
 <!-- iCheck -->
@@ -92,9 +100,6 @@ $this->load->view('template/js');
 
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url('assets/AdminLTE-2.0.5/dist/js/demo.js') ?>" type="text/javascript"></script>
-
-</body>
-</html>
 
 <?php
 $this->load->view('template/foot');
