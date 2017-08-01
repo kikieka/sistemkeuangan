@@ -11,16 +11,18 @@ $this->load->view('template/sidebar');
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
-        <li class="active">Transaksi</li> 
+        <li class="active">Operasional</li> 
     </ol>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-<form  action="http://localhost/Keuangan/C_operasional/tambah" method="post">
+    <div class="box box-default">
+        <div class="box-header with-border">
+          <h3 class="box-title">Input Operasional</h3>
+        </div>
+
+        <form  action="http://localhost/Keuangan/C_operasional/tambah" method="post">
+        <div class="box-body">
+          <div class="row">
+            <div class="col-md-12">
             <div class="form-group">
                 <label>Tanggal Operasional</label>
                 <div class="input-group date">
@@ -56,9 +58,11 @@ $this->load->view('template/sidebar');
             <br>
             <br>
             <input type="submit" name="submit" value="submit" class="btn btn-success">
+</div>
+</div>
+</div>
 </form>
-</body>
-</html>
+</div>
 </section>
 <?php
 $this->load->view('template/js');
