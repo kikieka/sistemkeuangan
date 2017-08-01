@@ -11,17 +11,17 @@ $this->load->view('template/sidebar');
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
-        <li class="active">Transaksi</li>
-        <li class="active">Tambah Transaksi</li> 
+        <li class="active">Tambah User</li> 
     </ol>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-    <form action="http://localhost/Keuangan/C_user/tambah" method="post">
+    <div class="box box-default">
+        <div class="box-header with-border">
+          <h3 class="box-title">CRUD User</h3>
+        </div>
+            <form action="http://localhost/Keuangan/C_user/tambah" method="post">
+        <div class="box-body">
+          <div class="row">
+            <div class="col-md-12">
         <div class="form-group">
             <label for="exampleInputName">Username</label>
             <input type="text" name="username" class="form-control" id="exampleInputEmail1" placeholder="Username">
@@ -42,12 +42,14 @@ $this->load->view('template/sidebar');
       <br>
       <br>
         <button type="submit"  class="btn btn-success">Submit</button>
-        
-    </form>
-</body>
-</html>
 
+        </div>
+    </div>
+</div>
+</form>
+</div>
 </section>
+
 
 <?php
 $this->load->view('template/js');

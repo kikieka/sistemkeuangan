@@ -18,7 +18,7 @@ $this->load->view('template/sidebar');
           <div class="row">
             <div class="col-md-12">
             <p>
-            <a class="btn btn-success" href="<?php echo base_url('C_user/tambah')?>" type="submit">Tambah User</a>
+            <a class="btn btn-info" href="<?php echo base_url('C_user/tambah')?>" type="submit">Tambah User</a>
             </p>
               <div class="box">
                 <div class="box-header">
