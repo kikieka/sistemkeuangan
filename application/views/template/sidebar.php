@@ -89,8 +89,8 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o text-info"></i>Laporan Transaksi</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o text-info"></i>Laporan Operasional</a></li>
+                    <li><a href="<?php echo site_url('C_rt')?>"><i class="fa fa-circle-o text-info"></i>Laporan Transaksi</a></li>
+                    <li><a href="<?php echo site_url('C_ro')?>"><i class="fa fa-circle-o text-info"></i>Laporan Operasional</a></li>
                 </ul>
             </li>
 
