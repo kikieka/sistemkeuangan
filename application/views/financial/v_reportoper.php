@@ -21,25 +21,27 @@ $this->load->view('template/sidebar');
               <div class="box">
                 <div class="box-header">
                   <h3 class="box-title">Daftar Operasional</h3>
-                </div>
-            <select name="bulan">
-                <option selected="selected" disabled="disabled" value="">Bulan</option>
-                <option value="01">Januari</option>
-                <option value="02">Februari</option>
-                <option value="03">Maret</option>
-                <option value="04">April</option>
-                <option value="05">Mei</option>
-                <option value="06">Juni</option>
-                <option value="07">Juli</option>
-                <option value="08">Agustus</option>
-                <option value="09">September</option>
-                <option value="10">Oktober</option>
-                <option value="11">November</option>
-                <option value="12">Desember</option>
-            </select>
-            <th>
-            <input type="submit" name="submit" value="submit" class="btn btn-success">
-            </th>
+                </div> 
+        <div class="col-xs-12">
+            <div class="form-group">
+                    <select class="form-control select2" style="width:25%;">
+                        <option name="bulan" selected="selected" disabled="disabled" value="">Bulan</option>
+                        <option value="01">Januari</option>
+                        <option value="02">Februari</option>
+                        <option value="03">Maret</option>
+                        <option value="04">April</option>
+                        <option value="05">Mei</option>
+                        <option value="06">Juni</option>
+                        <option value="07">Juli</option>
+                        <option value="08">Agustus</option>
+                        <option value="09">September</option>
+                        <option value="10">Oktober</option>
+                        <option value="11">November</option>
+                        <option value="12">Desember</option>
+                    </select>
+                <input type="submit" name="submit" value="submit" class="btn btn-success">
+            </div>
+        </div>
             <div class="box-body">
                 <table class="table table-bordered">
                         <tr>

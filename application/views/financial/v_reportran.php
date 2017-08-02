@@ -22,17 +22,22 @@ $this->load->view('template/sidebar');
                 <div class="box-header">
                   <h3 class="box-title">Daftar Operasional</h3>
                 </div>
-            <select name="Kategori">
-                <option selected="selected" disabled="disabled" value="">Kategori</option>
-                <option value="1">Operasional</option>
-              <div class="form-group">
-                  <?php
-                    foreach ($kategori as $kategori) {
-                        echo "<option value='".$kategori['id_kategori']."'>".$kategori['nama_kategori']."</option>";
-                  }
-                  ?>
-              </div>
-            </select>
+		            <select name="Kategori">
+		                <option selected="selected" disabled="disabled" value="">Kategori</option>
+		                <option value="1">Operasional</option>
+		                <option value="2">Entertainment</option>
+		                <option value="3">Modal</option>
+		                <option value="4">Gaji</option>
+		                <option value="5">Beban Pajak</option>
+		                <option value="6">Operasional</option>
+			              <div class="form-group">
+			                  <?php
+			                    foreach ($kategori as $kategori) {
+			                        echo "<option value='".$kategori['id_kategori']."'>".$kategori['nama_kategori']."</option>";
+			                  }
+			                  ?>
+			              </div>
+		            </select>
             <th>
             <select name="bulan">
                 <option selected="selected" disabled="disabled" value="">Bulan</option>

@@ -19,7 +19,7 @@ $this->load->view('template/sidebar');
           <h3 class="box-title">Input Operasional</h3>
         </div>
 
-        <form  action="http://localhost/Keuangan/C_operasional/tambah" method="post">
+        <form  action="http://localhost/sistemkeuangan/C_operasional/tambah" method="post">
         <div class="box-body">
           <div class="row">
             <div class="col-md-12">

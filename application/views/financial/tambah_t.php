@@ -18,7 +18,7 @@ $this->load->view('template/sidebar');
         <div class="box-header with-border">
           <h3 class="box-title">CRUD User</h3>
         </div>
-            <form action="http://localhost/Keuangan/C_user/tambah" method="post">
+            <form action="http://localhost/sistemkeuangan/C_user/tambah" method="post">
         <div class="box-body">
           <div class="row">
             <div class="col-md-12">
