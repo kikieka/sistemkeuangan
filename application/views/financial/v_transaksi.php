@@ -28,6 +28,47 @@ $this->load->view('template/sidebar');
                 <div class="box-header">
                   <h3 class="box-title">Daftar Transaksi</h3>
             </div>
+            <div class="col-xs-12">
+              <ul class="list-inline">
+                <li>
+                  <label>Pilih Kategori</label>
+                  <select class="form-control select2" name="nama_kategori" style="width: 100%;">
+                    <option selected="selected">--Pilih--</option>
+                    <option value="">Operasional</option>
+                    <option value="">Entertainment</option>
+                    <option value="">Modal</option>
+                    <option value="">Gaji</option>
+                    <option value="">Beban Pajak</option>
+                    <option value="">Pendapatan</option>
+                  </select>
+                </li>
+              
+                <li>
+                  <div class="form-group">
+                  <label>Pilih Bulan</label>
+                    <select class="form-control select2" name="month" style="width: 100%;">
+                      <option selected="selected">--Pilih--</option>
+                      <option value="">Januari</option>
+                      <option value="">Februari</option>
+                      <option value="">Maret</option>
+                      <option value="">April</option>
+                      <option value="">Mei</option>
+                      <option value="">Juni</option>
+                      <option value="">Juli</option>
+                      <option value="">Agustus</option>
+                      <option value="">September</option>
+                      <option value="">Oktober</option>
+                      <option value="">November</option>
+                      <option value="">Desember</option>
+                    </select>
+                  </div>             
+                </li>
+                <li>
+                  <button class="btn btn-success btn-pull-right" type="submit" value="submit" name="submit">Submit</button>
+                </li>
+              </ul>
+            </div>
+
             <!-- /.box-header -->
             <div class="box-body">
             <table id="example1" class="table table-bordered table-striped">
