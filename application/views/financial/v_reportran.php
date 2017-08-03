@@ -7,8 +7,8 @@ $this->load->view('template/sidebar');
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        OPERASIONAL<br>
-        <small>Daftar Operasional</small>
+        TRANSAKSI<br>
+        <small>Daftar Transaksi</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
@@ -20,9 +20,12 @@ $this->load->view('template/sidebar');
             <div class="col-md-12">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Daftar Operasional</h3>
+                  <h3 class="box-title">Daftar Transaksi</h3>
                 </div>
-		            <select name="Kategori">
+                <div class="col-xs-12">
+                <ul class="list-inline">
+                    <li>
+		            <select name="Kategori" class="form-control">
 		                <option selected="selected" disabled="disabled" value="">Kategori</option>
 		                <option value="1">Operasional</option>
 		                <option value="2">Entertainment</option>
@@ -38,8 +41,9 @@ $this->load->view('template/sidebar');
 			                  ?>
 			              </div>
 		            </select>
-            <th>
-            <select name="bulan">
+                    </li>
+        <li>
+            <select name="bulan" class="form-control">
                 <option selected="selected" disabled="disabled" value="">Bulan</option>
                 <option value="01">Januari</option>
                 <option value="02">Februari</option>
@@ -54,10 +58,12 @@ $this->load->view('template/sidebar');
                 <option value="11">November</option>
                 <option value="12">Desember</option>
             </select>
-            </th>
-            <th>
+        </li>
+        <li>
             <input type="submit" name="submit" value="submit" class="btn btn-success">
-            </th>
+        </li>
+        </ul>
+        </div>
             <div class="box-body">
                 <table class="table table-bordered">
                         <tr>
@@ -74,7 +80,7 @@ $this->load->view('template/sidebar');
                             foreach ($financial as $transaksi) {
                                     echo "<tr>";
                                     echo '<td>'.$id_transaksi."</td>";
-                                    echo '<td>'.$transaksi['tanggal']."</td>";
+                                    echo '<td>'.date('l, d-m-Y',strtotime($transaksi['tanggal']))."</td>";
                                     echo '<td>'.$transaksi['nama']."</td>";
                                     echo '<td>'.$transaksi['nama_kategori']."</td>";
                                     echo '<td>'.$transaksi['tipe']."</td>";

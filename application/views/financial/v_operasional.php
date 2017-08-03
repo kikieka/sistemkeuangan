@@ -48,7 +48,7 @@ $this->load->view('template/sidebar');
                   foreach ($financial as $transaksi) {
                     echo "<tr>";
                     echo '<td>'.$id_transaksi."</td>";
-                    echo '<td>'.$transaksi['tanggal']."</td>";
+                    echo '<td>'.date('l, d-m-Y',strtotime($transaksi['tanggal']))."</td>";
                     echo '<td>'.$transaksi['nama']."</td>";
                     echo '<td>'.$transaksi['nama_kategori']."</td>";
                     echo '<td>'.$transaksi['tipe']."</td>";
@@ -56,6 +56,7 @@ $this->load->view('template/sidebar');
                     echo '<td>'.$transaksi['keterangan']."</td>";
                     echo "<td><a href ='".base_url()."C_operasional/edit/".$transaksi['id_transaksi'],"'class='btn-group btn-warning btn-xs'><span class='glyphicon glyphicon-edit'></span>Edit <a href='".base_url()."C_operasional/delete/". $transaksi['id_transaksi']."' class='btn-group btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span> Del</a></td>";
                     $id_transaksi++;
+                    //$tgl = date('l, d-m-Y');
                     echo "</tr>";
 
                   }
@@ -105,6 +106,7 @@ $this->load->view('template/js');
 
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url('assets/AdminLTE-2.0.5/dist/js/demo.js') ?>" type="text/javascript"></script>
+
 
 <?php
 $this->load->view('template/foot');

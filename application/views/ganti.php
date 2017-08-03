@@ -52,7 +52,7 @@ $this->load->view('template/sidebar');
                 	</select>
             <br>
             <label>Tipe Operasional</label><br>
-            <select name="tipe" class="form-control" value="<?php echo $transaksi->tipe ?>" 
+            <select name="tipe" class="form-control" value="<?php echo $data['tipe'] ?>" 
                     <option value="Outcome">Outcome</option>
                     <option value="Income">Income</option>
                 </select>

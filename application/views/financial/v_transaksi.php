@@ -91,7 +91,7 @@ $this->load->view('template/sidebar');
                         foreach ($financial as $transaksi) {
                         echo "<tr>";
                         echo '<td>'.$id_transaksi."</td>";
-                        echo '<td>'.$transaksi['tanggal']."</td>";
+                        echo '<td>'.date('l, d-m-Y',strtotime($transaksi['tanggal']))."</td>";
                         echo '<td>'.$transaksi['nama']."</td>";
                         echo '<td>'.$transaksi['nama_kategori']."</td>";
                         echo '<td>'.$transaksi['tipe']."</td>";

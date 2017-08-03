@@ -32,7 +32,6 @@ $this->load->view('template/sidebar');
 		<br>
 		<label>Role</label><br>
             <select name="role" class="form-control">
-                    <option value="Super Admin">Super Admin</option>
                     <option value="Admin">Admin</option>
                     <option value="Bendahara">Bendahara</option>
                 </select>

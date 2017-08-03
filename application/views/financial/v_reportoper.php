@@ -23,8 +23,9 @@ $this->load->view('template/sidebar');
                   <h3 class="box-title">Daftar Operasional</h3>
                 </div> 
         <div class="col-xs-12">
-            <div class="form-group">
-                    <select class="form-control select2">
+            <ul class="list-inline">
+                <li>
+                    <select name="kategori" class="form-control" >
                         <option name="bulan" selected="selected" disabled="disabled" value="">Bulan</option>
                         <option value="01">Januari</option>
                         <option value="02">Februari</option>
@@ -39,8 +40,11 @@ $this->load->view('template/sidebar');
                         <option value="11">November</option>
                         <option value="12">Desember</option>
                     </select>
-                <input type="submit" name="submit" value="submit" class="btn btn-success">
-            </div>
+                </li>
+                <li>
+                    <input type="submit" name="submit" value="submit" class="btn btn-success">
+                </li>
+            </ul>
         </div>
             <div class="box-body">
                 <table class="table table-bordered">
@@ -58,7 +62,7 @@ $this->load->view('template/sidebar');
                             foreach ($financial as $transaksi) {
                                     echo "<tr>";
                                     echo '<td>'.$id_transaksi."</td>";
-                                    echo '<td>'.$transaksi['tanggal']."</td>";
+                                    echo '<td>'.date('l, d-m-Y',strtotime($transaksi['tanggal']))."</td>";
                                     echo '<td>'.$transaksi['nama']."</td>";
                                     echo '<td>'.$transaksi['nama_kategori']."</td>";
                                     echo '<td>'.$transaksi['tipe']."</td>";
