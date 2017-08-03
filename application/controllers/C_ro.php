@@ -15,4 +15,9 @@ class C_ro extends CI_Controller{
 		$this->load->view('financial/v_reportoper',$data);
 	}
 
+	public function mm()
+	{
+		$bulan = $_POST['bulan'];
+		$sql = "SELECT * FROM transaksi where month(waktu)='$bulan' ";
+	}
 }

@@ -24,7 +24,7 @@ $this->load->view('template/sidebar');
                 </div> 
         <div class="col-xs-12">
             <div class="form-group">
-                    <select class="form-control select2" style="width:25%;">
+                    <select class="form-control select2">
                         <option name="bulan" selected="selected" disabled="disabled" value="">Bulan</option>
                         <option value="01">Januari</option>
                         <option value="02">Februari</option>
