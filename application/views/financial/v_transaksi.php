@@ -29,17 +29,18 @@ $this->load->view('template/sidebar');
                   <h3 class="box-title">Daftar Transaksi</h3>
             </div>
             <div class="col-xs-12">
+            <form action="C_transaksi.php" method="post">
               <ul class="list-inline">
                 <li>
                   <label>Pilih Kategori</label>
                   <select class="form-control select2" name="nama_kategori" style="width: 100%;">
                     <option selected="selected">--Pilih--</option>
-                    <option value="nama_kategori">Operasional</option>
-                    <option value="nama_kategori">Entertainment</option>
-                    <option value="nama_kategori">Modal</option>
-                    <option value="nama_kategori">Gaji</option>
-                    <option value="nama_kategori">Beban Pajak</option>
-                    <option value="nama_kategori">Pendapatan</option>
+                    <option value="operasional">Operasional</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="modal">Modal</option>
+                    <option value="gaji">Gaji</option>
+                    <option value="beban_pajak">Beban Pajak</option>
+                    <option value="pendapatan">Pendapatan</option>
                   </select>
                 </li>
               
@@ -67,6 +68,7 @@ $this->load->view('template/sidebar');
                   <a class="btn btn-success" type="submit" href="<?php echo site_url('C_transaksi/getRecords') ?>">Submit</a>
                 </li>
               </ul>
+              </form>
             </div>
 
             <!-- /.box-header -->
@@ -86,7 +88,7 @@ $this->load->view('template/sidebar');
             </tr>
             </thead>
                   <tbody>
-                        <?php  
+                        <?php
                         $id_transaksi=1;
                         foreach ($financial as $transaksi) {
                         echo "<tr>";
@@ -151,6 +153,17 @@ $this->load->view('template/js');
 
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url('assets/AdminLTE-2.0.5/dist/js/demo.js') ?>" type="text/javascript"></script>
+
+<!-- <script type="text/javascript">
+        //Datetimepicker plugin
+        $('.datepicker').bootstrapMaterialDatePicker({
+            format: 'DD/MM/YYYY',
+            clearButton: true,
+            weekStart: 1,
+            time: false
+        });
+</script> -->
+
 <?php
 $this->load->view('template/foot');
 ?>

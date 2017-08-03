@@ -17,7 +17,8 @@ class C_transaksi extends CI_Controller {
 
 	public function tampil()
 	{
-		$data['financial']=$this->db->query('SELECT transaksi.id_transaksi as id_transaksi, transaksi.tanggal as tanggal, member.nama as nama, kategori.nama_kategori as nama_kategori, transaksi.tipe as tipe, transaksi.jml_transaksi as jml_transaksi, transaksi.keterangan as keterangan from member join transaksi on member.id_member = transaksi.id_member join kategori on kategori.id_kategori=transaksi.id_kategori;')->result_array();
+		$data['financial']=$this->db->query('SELECT transaksi.id_transaksi as id_transaksi, transaksi.tanggal as tanggal, member.nama as nama, kategori.nama_kategori as nama_kategori, transaksi.tipe as tipe, transaksi.jml_transaksi as jml_transaksi, transaksi.keterangan as keterangan from member join transaksi on member.id_member = transaksi.id_member join kategori on kategori.id_kategori=transaksi.id_kategori order by tanggal desc;')->result_array();
+		//$data['financial']=$this->db->query('SELECT DATE_FORMAT(tanggal, 'd-m-Y') FROM transaksi;')->result_array();
 		$this->load->view('financial/v_transaksi.php', $data);
 	}
 	public function tambah()
@@ -138,7 +139,7 @@ class C_transaksi extends CI_Controller {
 			$tgl 			=	date('Y-m-d H:i:s', strtotime($tgl));
 			$id_member 		=	$this->input->post('id_member');
 			$id_kategori 	=	$this->input->post('id_kategori');
-			$tipe			=	$this->input->post('tipe');
+			$nama_tipe			=	$this->input->post('tipe');
 			$jml_transaksi 	=	$this->input->post('jml_transaksi');
 			$keterangan 	=	$this->input->post('keterangan');
 
@@ -147,7 +148,7 @@ class C_transaksi extends CI_Controller {
 				'tanggal'=>$tgl,
 				'id_member'=>$id_member,
 				'id_kategori'=>$id_kategori,
-				'tipe'=>$tipe,
+				'tipe'=>$nama_tipe,
 				'jml_transaksi'=>$jml_transaksi,
 				'keterangan'=>$keterangan,
 				);
@@ -163,9 +164,9 @@ class C_transaksi extends CI_Controller {
 	public function getRecords()
 	{
 		if (isset($_POST['submit'])) {
- 		echo 'waawww';
+ 			echo "true";
 		}else{
-
+			echo "else";;
 		}
 	}
 }
