@@ -56,7 +56,7 @@ class C_transaksi extends CI_Controller {
 		if (isset($_POST['submit'])) {
 			// $id 			=	$this->input->post ('id_transaksi');
 			$tgl			=	$this->input->post('tanggal');
-			$tgl=date('Y-m-d H:i:s', strtotime($tgl));
+			$tgl 			=	date('Y-m-d H:i:s', strtotime($tgl));
 			$id_member 		=	$this->input->post('id_member');
 			$id_kategori 	=	$this->input->post('id_kategori');
 			$jml_transaksi 	=	$this->input->post('jml_transaksi');
@@ -88,7 +88,7 @@ class C_transaksi extends CI_Controller {
 		if (isset($_POST['submit'])) {
 			// $id 			=	$this->input->post ('id_transaksi');
 			$tgl			=	$this->input->post('tanggal');
-			$tgl=date('Y-m-d H:i:s', strtotime($tgl));
+			$tgl 			=	date('Y-m-d H:i:s', strtotime($tgl));
 			$id_member 		=	$this->input->post('id_member');
 			$id_kategori 	=	$this->input->post('id_kategori');
 			$jml_transaksi 	=	$this->input->post('jml_transaksi');
@@ -135,9 +135,10 @@ class C_transaksi extends CI_Controller {
 	{
 			$id_transaksi	=	$this->input->post('id_transaksi');
 			$tgl			=	$this->input->post('tanggal');
-			$tgl=date('Y-m-d H:i:s', strtotime($tgl));
+			$tgl 			=	date('Y-m-d H:i:s', strtotime($tgl));
 			$id_member 		=	$this->input->post('id_member');
 			$id_kategori 	=	$this->input->post('id_kategori');
+			$tipe			=	$this->input->post('tipe');
 			$jml_transaksi 	=	$this->input->post('jml_transaksi');
 			$keterangan 	=	$this->input->post('keterangan');
 
@@ -146,6 +147,7 @@ class C_transaksi extends CI_Controller {
 				'tanggal'=>$tgl,
 				'id_member'=>$id_member,
 				'id_kategori'=>$id_kategori,
+				'tipe'=>$tipe,
 				'jml_transaksi'=>$jml_transaksi,
 				'keterangan'=>$keterangan,
 				);
@@ -156,6 +158,15 @@ class C_transaksi extends CI_Controller {
 			$data['financial'] = $this->db->get_where('transaksi',$kondisi)->result_array();
 			//$this->load->view('C_transaksi/tampil');
 			redirect('C_transaksi/tampil');
+	}
+
+	public function getRecords()
+	{
+		if (isset($_POST['submit'])) {
+ 		echo 'waawww';
+		}else{
+
+		}
 	}
 }
 ?>

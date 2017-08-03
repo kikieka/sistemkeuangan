@@ -50,6 +50,7 @@ $this->load->view('template/sidebar');
                   </select>
                 </div>
 
+                <!-- kategori -->
                 <div class="form-group">
                   <label>Kategori</label>
                   <select class="form-control select2" selected="<?=$financial->row()->id_kategori?>" style="width: 100%;" name="id_kategori">
@@ -63,15 +64,20 @@ $this->load->view('template/sidebar');
                   </select>
                 </div>
 
-                <!-- <div class="form-group">
-                      <label>Type</label>
-                      <input type="text" class="form-control" placeholder="" disabled/>
-                </div> -->
+                <!-- tipe -->
+                <div class="form-group">
+                  <label>Tipe</label>
+                  <select class="form-control select2" selected="<?=$financial->row()->tipe?>" style="width: 100%;" name="tipe">
+                    <option value="Income">Income</option>
+                    <option value="Outcome">Outcome</option>
+                  </select>
+                </div>
 
                 <!-- jumlah-->
                 <div class="form-group">
                   <label>Jumlah Transaksi</label>
                   <input name="jml_transaksi" type="text" class="form-control" value="<?=$financial->row()->jml_transaksi?>">
+
                 </div>
 
                 <!-- keterangan-->

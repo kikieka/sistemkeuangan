@@ -5,7 +5,7 @@ $this->load->view('template/sidebar');
 ?>
 
 <!-- Content Header (Page header) -->
-<section class="content-header">
+  <section class="content-header">
     <h1>
         TRANSAKSI 
         <small>Daftar Transaksi</small>
@@ -34,12 +34,12 @@ $this->load->view('template/sidebar');
                   <label>Pilih Kategori</label>
                   <select class="form-control select2" name="nama_kategori" style="width: 100%;">
                     <option selected="selected">--Pilih--</option>
-                    <option value="">Operasional</option>
-                    <option value="">Entertainment</option>
-                    <option value="">Modal</option>
-                    <option value="">Gaji</option>
-                    <option value="">Beban Pajak</option>
-                    <option value="">Pendapatan</option>
+                    <option value="nama_kategori">Operasional</option>
+                    <option value="nama_kategori">Entertainment</option>
+                    <option value="nama_kategori">Modal</option>
+                    <option value="nama_kategori">Gaji</option>
+                    <option value="nama_kategori">Beban Pajak</option>
+                    <option value="nama_kategori">Pendapatan</option>
                   </select>
                 </li>
               
@@ -48,23 +48,23 @@ $this->load->view('template/sidebar');
                   <label>Pilih Bulan</label>
                     <select class="form-control select2" name="month" style="width: 100%;">
                       <option selected="selected">--Pilih--</option>
-                      <option value="">Januari</option>
-                      <option value="">Februari</option>
-                      <option value="">Maret</option>
-                      <option value="">April</option>
-                      <option value="">Mei</option>
-                      <option value="">Juni</option>
-                      <option value="">Juli</option>
-                      <option value="">Agustus</option>
-                      <option value="">September</option>
-                      <option value="">Oktober</option>
-                      <option value="">November</option>
-                      <option value="">Desember</option>
+                      <option value="01">Januari</option>
+                      <option value="02">Februari</option>
+                      <option value="03">Maret</option>
+                      <option value="04">April</option>
+                      <option value="05">Mei</option>
+                      <option value="06">Juni</option>
+                      <option value="07">Juli</option>
+                      <option value="08">Agustus</option>
+                      <option value="09">September</option>
+                      <option value="10">Oktober</option>
+                      <option value="11">November</option>
+                      <option value="12">Desember</option>
                     </select>
                   </div>             
                 </li>
                 <li>
-                  <button class="btn btn-success btn-pull-right" type="submit" value="submit" name="submit">Submit</button>
+                  <a class="btn btn-success" type="submit" href="<?php echo site_url('C_transaksi/getRecords') ?>">Submit</a>
                 </li>
               </ul>
             </div>
