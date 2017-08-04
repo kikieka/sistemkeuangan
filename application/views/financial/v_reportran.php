@@ -23,47 +23,49 @@ $this->load->view('template/sidebar');
                   <h3 class="box-title">Daftar Transaksi</h3>
                 </div>
                 <div class="col-xs-12">
-                <ul class="list-inline">
-                    <li>
-		            <select name="Kategori" class="form-control">
-		                <option selected="selected" disabled="disabled" value="">Kategori</option>
-		                <option value="1">Operasional</option>
-		                <option value="2">Entertainment</option>
-		                <option value="3">Modal</option>
-		                <option value="4">Gaji</option>
-		                <option value="5">Beban Pajak</option>
-		                <option value="6">Operasional</option>
-			              <div class="form-group">
-			                  <?php
-			                    foreach ($kategori as $kategori) {
-			                        echo "<option value='".$kategori['id_kategori']."'>".$kategori['nama_kategori']."</option>";
-			                  }
-			                  ?>
-			              </div>
-		            </select>
-                    </li>
-        <li>
-            <select name="bulan" class="form-control">
-                <option selected="selected" disabled="disabled" value="">Bulan</option>
-                <option value="01">Januari</option>
-                <option value="02">Februari</option>
-                <option value="03">Maret</option>
-                <option value="04">April</option>
-                <option value="05">Mei</option>
-                <option value="06">Juni</option>
-                <option value="07">Juli</option>
-                <option value="08">Agustus</option>
-                <option value="09">September</option>
-                <option value="10">Oktober</option>
-                <option value="11">November</option>
-                <option value="12">Desember</option>
-            </select>
-        </li>
-        <li>
-            <input type="submit" name="submit" value="submit" class="btn btn-success">
-        </li>
-        </ul>
-        </div>
+                <form action="<?php echo base_url('C_rt/index');?>" method="GET">
+                    <ul class="list-inline">
+                        <li>
+    		            <select name="nama_kategori" class="form-control">
+    		                <option value="0">Kategori</option>
+    		                <option value="1">Operasional</option>
+    		                <option value="2">Entertainment</option>
+    		                <option value="3">Modal</option>
+    		                <option value="4">Gaji</option>
+    		                <option value="5">Beban Pajak</option>
+    		                <option value="6">Operasional</option>
+    			              <div class="form-group">
+    			                  <?php
+    			                    foreach ($kategori as $kategori) {
+    			                        echo "<option value='".$kategori['id_kategori']."'>".$kategori['nama_kategori']."</option>";
+    			                  }
+    			                  ?>
+    			              </div>
+    		            </select>
+                        </li>
+                        <li>
+                            <select name="bulan" class="form-control">
+                                <option value="00">Bulan</option>
+                                <option value="01">Januari</option>
+                                <option value="02">Februari</option>
+                                <option value="03">Maret</option>
+                                <option value="04">April</option>
+                                <option value="05">Mei</option>
+                                <option value="06">Juni</option>
+                                <option value="07">Juli</option>
+                                <option value="08">Agustus</option>
+                                <option value="09">September</option>
+                                <option value="10">Oktober</option>
+                                <option value="11">November</option>
+                                <option value="12">Desember</option>
+                            </select>
+                        </li>
+                        <li>
+                            <input type="submit" name="submit" value="submit" class="btn btn-success">
+                        </li>
+                    </ul>
+                </form>
+            </div>
             <div class="box-body">
                 <table class="table table-bordered">
                         <tr>

@@ -23,7 +23,7 @@ $this->load->view('template/sidebar');
                   <h3 class="box-title">Daftar Operasional</h3>
                 </div> 
         <div class="col-xs-12">
-        <form action="<?php echo base_url('C_ro');?>" method="get">
+        <form action="<?php echo base_url('C_ro');?>" method="GET">
             <ul class="list-inline">
                 <li>
                     <select name="bulan" class="form-control" >
