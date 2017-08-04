@@ -69,7 +69,7 @@ $this->load->view('template/sidebar');
                   <label>Tipe</label>
                   <select class="form-control select2" selected="<?=$financial->row()->tipe?>" style="width: 100%;" name="tipe">
                     <?php
-                      if ($financial->row->$tipe == 'income') {
+                      if ($financial->row()->tipe == 'Income') {
                         ?>
                         <option value="income" selected>Income</option>
                         <option value="outcome">Outcome</option>   
@@ -80,7 +80,6 @@ $this->load->view('template/sidebar');
                         <option value="outcome" selected>Outcome</option>
                       <?php }
                     ?>
-
                   </select>
                 </div>
 

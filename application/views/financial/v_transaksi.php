@@ -29,26 +29,26 @@ $this->load->view('template/sidebar');
                   <h3 class="box-title">Daftar Transaksi</h3>
             </div>
             <div class="col-xs-12">
-            <form action="C_transaksi.php" method="post">
+            <form action="<?php echo base_url('C_transaksi/tampil');?>" method="get">
               <ul class="list-inline">
                 <li>
                   <label>Pilih Kategori</label>
                   <select class="form-control select2" name="nama_kategori" style="width: 100%;">
-                    <option selected="selected">--Pilih--</option>
-                    <option value="operasional">Operasional</option>
-                    <option value="entertainment">Entertainment</option>
-                    <option value="modal">Modal</option>
-                    <option value="gaji">Gaji</option>
-                    <option value="beban_pajak">Beban Pajak</option>
-                    <option value="pendapatan">Pendapatan</option>
+                    <option value="0">Semua Kategori</option>
+                    <option value="1">Operasional</option>
+                    <option value="2">Entertainment</option>
+                    <option value="3">Modal</option>
+                    <option value="4">Gaji</option>
+                    <option value="5">Beban Pajak</option>
+                    <option value="6">Pendapatan</option>
                   </select>
                 </li>
               
                 <li>
                   <div class="form-group">
                   <label>Pilih Bulan</label>
-                    <select class="form-control select2" name="month" style="width: 100%;">
-                      <option selected="selected">--Pilih--</option>
+                    <select class="form-control select2" name="bulan" style="width: 100%;">
+                      <option value="0">Semua Bulan</option>
                       <option value="01">Januari</option>
                       <option value="02">Februari</option>
                       <option value="03">Maret</option>
@@ -65,7 +65,7 @@ $this->load->view('template/sidebar');
                   </div>             
                 </li>
                 <li>
-                  <a class="btn btn-success" type="submit" href="<?php echo site_url('C_transaksi/getRecords') ?>">Submit</a>
+                  <input class="btn btn-success" type="submit" value="submit" name="submit">
                 </li>
               </ul>
               </form>
