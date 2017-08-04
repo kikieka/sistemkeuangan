@@ -23,10 +23,11 @@ $this->load->view('template/sidebar');
                   <h3 class="box-title">Daftar Operasional</h3>
                 </div> 
         <div class="col-xs-12">
+        <form action="<?php echo base_url('C_ro');?>" method="get">
             <ul class="list-inline">
                 <li>
-                    <select name="kategori" class="form-control" >
-                        <option name="bulan" selected="selected" disabled="disabled" value="">Bulan</option>
+                    <select name="bulan" class="form-control" >
+                        <option value="00">Semua Bulan</option>
                         <option value="01">Januari</option>
                         <option value="02">Februari</option>
                         <option value="03">Maret</option>
@@ -45,6 +46,7 @@ $this->load->view('template/sidebar');
                     <input type="submit" name="submit" value="submit" class="btn btn-success">
                 </li>
             </ul>
+        </form>
         </div>
             <div class="box-body">
                 <table class="table table-bordered">
