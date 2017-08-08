@@ -24,7 +24,7 @@ class C_operasional extends CI_Controller {
 
 		if (isset($_POST['submit'])) {
 			$id 			=	$this->input->post ('id_transaksi');
-			$tgl			=	date('d-m-Y H-i-s', strtotime($this->input->post('tanggal')));
+			$tgl			=	date('Y-m-d H-i-s', strtotime($this->input->post('tanggal')));
 			$id_member 		=	$this->input->post ('id_member');
 			//$id_kategori 	=	$this->input->post ('id_kategori');
 			$tipe	 		=	$this->input->post ('tipe');
